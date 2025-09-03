@@ -54,7 +54,7 @@ while (isContinueWork)
             var year = int.Parse(Console.ReadLine());
             Console.WriteLine("Введiть колiр авто");
             var color = Console.ReadLine();
-            var carOfClient = new Car { Make = make, Model = model, Year = year, Color = Color.FromName(color) };
+            var carOfClient = new Car { Make = make, Model = model, Year = year, Color = Color.FromName(color)};
             Console.WriteLine("Введiть бажану процедуру");
             var description = Console.ReadLine();
             Console.WriteLine($"Отриманно замовлення вiд {newClient.Name}, Телефон:{newClient.PhoneNumber}");
