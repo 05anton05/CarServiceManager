@@ -40,27 +40,19 @@ while (isContinueWork)
         case 3:
             break;
         case 4:
-            Console.WriteLine("Введiть iм'я");
-            var nameOfClient = Console.ReadLine();
-            Console.WriteLine("Введiть номер телефону");
-            var phone = Console.ReadLine();
-            var newClient = new Client { Name = nameOfClient, PhoneNumber = phone };
-            Console.WriteLine($"Новий клiєнт: {newClient.Name} Телефон: {newClient.PhoneNumber}");
-            Console.WriteLine("Введiть марку авто");
-            var make = Console.ReadLine();
-            Console.WriteLine("Введiть модель авто");
-            var model = Console.ReadLine();
-            Console.WriteLine("Введiть рiк випуску авто");
-            var year = int.Parse(Console.ReadLine());
-            Console.WriteLine("Введiть колiр авто");
-            var color = Console.ReadLine();
-            var carOfClient = new Car { Make = make, Model = model, Year = year, Color = Color.FromName(color)};
-            Console.WriteLine("Введiть бажану процедуру");
-            var description = Console.ReadLine();
-            Console.WriteLine($"Отриманно замовлення вiд {newClient.Name}, Телефон:{newClient.PhoneNumber}");
+            Console.WriteLine("Доброго дня. Я механiк Антон - бачу вашому автомобiлю погано, давайте допоможу!" + "\n Ваше им'я:");
+               var clientInfo = new Client { Name = "Михайло", PhoneNumber = "380******"};
+            Console.WriteLine($"Клiєнт: {clientInfo.Name}, Телефон: {clientInfo.PhoneNumber}");
+            var clientsCar = new Car { Make = "Nissan", Model = "Rogue", Color = Color.Black, PlateNumber = "AX7777XA", Year = 2019 };
+            Console.WriteLine("Розкажiть про автомобiль!");
+            Console.WriteLine($"Автомобiль клiєнта: {clientsCar.Make} {clientsCar.Model} {clientsCar.Year} {clientsCar.Color.Name}");
+            Console.WriteLine("Опишiть проблему:");
+            var problemDescription = "Замок дверi не працює";
+            Console.WriteLine($"Проблема: {problemDescription}, \n Авто: {clientsCar.Make}, {clientsCar.Model}, {clientsCar.Year}, {clientsCar.PlateNumber}, \n Прийнятий: {DateTime.Now},  ");
+             break;
             
 
-            break;
+            
 
     }
 }
