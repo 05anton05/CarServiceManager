@@ -94,7 +94,6 @@ while (isContinueWork)
                         Console.WriteLine($"Авто: {clientOrder.Car.Make} {clientOrder.Car.Model}, Проблема: {clientOrder.Description}, Статус: {clientOrder.Status}");
                     }
                 }
-               
             }
             break;
     }
