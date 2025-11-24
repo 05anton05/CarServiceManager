@@ -1,31 +1,23 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using CarServiceManager;
+using CarServiceManager.Services;
 using System.Drawing;
 
-Console.WriteLine("Hello, World!");
-static void PrintMenu()
-{
-    Console.OutputEncoding = System.Text.Encoding.UTF8;
-    Console.WriteLine(Environment.NewLine + "");
-    Console.WriteLine(" 1 - Додати клієнта");
-    Console.WriteLine(" 2 - Додати авто клієнту");
-    Console.WriteLine(" 3 - Список клієнтів");
-    Console.WriteLine(" 4 - Cтоврити замовлення ");
-    Console.WriteLine(" 5 - Вийти");
-    
+var menuService = new MenuService();
+var carService = new CarService();
 
-}
 bool isContinueWork = true;
+menuService.PrintMenu();
+
 while (isContinueWork)
 {
-
-    PrintMenu();
     int userChoice = int.Parse(Console.ReadLine());
 
     switch (userChoice)
     {
         case 1:
-            var car = new Car { Make = "Nissan", Model = "Rogue", Color = Color.Black, PlateNumber = "AX7777XA", Year = 2019 };
+            var car = carService.Create("Nissan", "Rogue", Color.Black, "AX7777XA", 2019);
+            var newMazda = carService.CreateMazdaCX5(Color.Black, "AX7777XA", 2019);
             var client = new Client();
             client.Name = "Misha";
             client.PhoneNumber = "068********";
@@ -62,5 +54,16 @@ while (isContinueWork)
 
             break;
 
+
+    }
+
+    if (userChoice == 5)
+    {
+        isContinueWork = false;
+    }
+    else
+    {
+        menuService.ResetMenu();
     }
 }
+
